@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>One Funded Prop Firm</title>
+        <link rel="stylesheet" href="./style.css">
+        <link rel="icon" type="image/png" href="img/name-logo.png"> <!-- Add an icon to the window title in the browser  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer"/> <!-- This is for icons in footer -->
+</head>
+
+<body>
+    <!-- This whole section contains the header content -->
+    <header id = "header">
+        <div id = "image-logo">
+            <a href="#header"><img src="img/name-logo.png" alt="Image Logo" id="logo"></a>  <!-- Remember to fix the header section even if the page is scrolled-->
+        </div>
+        <div id = "sections">
+            <a href="#Howitworks"><button class = "button">How it works</button></a>
+            <a href="#programs"><button class = "button">Programs</button></a>
+            <a href="#benefits"><button class = "button">Benefits</button></a>
+            <a href="#testimonies"><button class = "button">Testimonies</button></a>
+            <a href="#us"><button class = "button"> About us</button></a>
+            <a href="contact.html"><button class = "button">Contact</button></a>
+            <a href="#signup"><button class = "button">Sign Up</button></a>
+        </div>
+    </header>
+
+    <!-- This section contains the Main page information -->
+    <div id = "main-page">
+        <h1>Trade with our Capital <br> and your Experience</h1>
+        <hr> <!-- This tag adds the vertical line below the title -->
+        <img src="img/candlestick.png" alt="Candlestick Logo" id="candle-logo">
+        <p id = "paragraph-mp">We're looking for profitable traders to our funding program</p>
+        <a id="join" href="#programs">Join us!</a>
+    </div><br><br>  
+
+        <!-- This section contains the How it works information -->    
+    <div id="Howitworks">
+        <br>
+        <div class="h2">
+            <h2>How it works</h2>
+            <hr>
+        </div>
+        <div id = "how-it-works">
+            <section class = "works"> 
+                <div class="phase-image"> <!-- First div contains the image  -->
+                    <img src="img/phase 1.png" alt="Phase 1" class="phases"><br> <!-- brs used to add a line break between checkbox and images -->
+                </div>
+                <div class="div-roundbox"> <!-- Second div contains the checkbox and its label -->
+                    <input type="radio" name="cbphase1" class = "checkbox" checked>
+                    <label for="cbphase1">Surpass Phase 1!</label>
+                </div><br>
+                <div class="phase-description">
+                    <p>Reach 8% of your account base size and get 2% of your profits made in Phase 1 if challenge is passed. 
+                        This amount will be paid within the first payout with your funded account.
+                    </p>
+                </div>
+            </section>
+            <section class = "works">
+                <div class="phase-image">
+                    <img src="img/phase 2.png" alt="Phase 2" class="phases"><br>
+                </div>
+                <div class="div-roundbox">
+                    <input type="radio" name="cbphase2" class = "checkbox" checked>
+                    <label for="cbphase2">Phase 2 is much easier</label>
+                </div><br>
+                <div class="phase-description">
+                    <p>Phase 2 is even better! Reach 5% of your account base size and get 4% of your profits if challenge is passed. 
+                        Paid together with Phase 1 bonus in your first payout of your funded account.
+                    </p>
+                </div>
+            </section>
+            <section class = "works">
+                <div class="phase-image">
+                    <img src="img/phase 3.png" alt="Phase 3" class="phases"><br>
+                </div>
+                <div class="div-roundbox">
+                    <input type="radio" name="cbphase3" class = "checkbox" checked>
+                    <label for="cbphase3">Congratulations, you made it!</label>
+                </div><br>
+                <div class="phase-description">
+                    <p>Now you're a funded trader! Now there is no restriction in time nor profit goals. Make sure you manage your risk
+                        to protect your account and keep up the good work. <br><br>
+                    </p>
+                </div>
+            </section>    
+        </div><br><br>
+    </div>
+    <br>
+
+    <!-- This section contains the whole "Programs" section --> <!--  -->
+    <div id = "programs">
+        <section class="h2">
+            <h2>Programs</h2><hr>
+        </section>
+        <section id="program-paragraph">
+            <p>Your success makes our bussiness. For this reason we provide traders with multiple options for you to choose.
+                To allow you join our Trading Firm, we need to be sure you manage a proper risk. That's why we developed 
+                Trading Goals and Requirements. By reaching them you demonstrate you are disciplined and experienced trader.
+            </p>
+        </section><br>
+        <section id="table-section">
+            <table>
+                <tbody>
+                    <tr>
+                        <th class="missing-row-cell"></th>
+                        <th class="first-row">$5,000</th>
+                        <th class="first-row">$10,000</th>
+                        <th class="first-row">$20,000</th>
+                        <th class="first-row">$50,000</th>
+                        <th class="first-row">$100,000</th>
+                        <th class="first-row">$200,000</th>
+                        <th class="first-row">$300,000</th>
+                    </tr>
+                    <tr>
+                        <td class="first-column">Phase 1 time and target</td> 
+                        <td colspan="7" class="rest-of-table">8% profit, 30 days</td> <!-- "colspan" merges cells to the right -->
+                    </tr>
+                    <tr>
+                        <td class="first-column">Phase 2 time and target</td> 
+                        <td colspan="7" class="rest-of-table">5% profit, 60 days</td> <!-- "colspan" merges cells to the right -->
+                    </tr>
+                    <tr>
+                        <td class="first-column">Required trading period</td>
+                        <td colspan="7" class="rest-of-table">7 days</td>
+                    </tr>
+                    <tr>
+                        <td class="first-column">Maximum daily loss</td>
+                        <td class="rest-of-table">$250</td>
+                        <td class="rest-of-table">$500</td>
+                        <td class="rest-of-table">$1,000</td>
+                        <td class="rest-of-table">$2,500</td>
+                        <td class="rest-of-table">$5,000</td>
+                        <td class="rest-of-table">$10,000</td>
+                        <td class="rest-of-table">$15,000</td>
+                    </tr>
+                    <tr>
+                        <td class="first-column">Maximum overall loss</td>
+                        <td class="rest-of-table">$600</td>
+                        <td class="rest-of-table">$1,200</td>
+                        <td class="rest-of-table">$2,400</td>
+                        <td class="rest-of-table">$6,000</td>
+                        <td class="rest-of-table">$12,000</td>
+                        <td class="rest-of-table">$24,000</td>
+                        <td class="rest-of-table">$36,000</td>
+                    </tr>
+                    <tr>
+                        <td class="first-column">Refundable registration fee</td>
+                        <td class="rest-of-table" >$49</td>
+                        <td class="rest-of-table">$89</td>
+                        <td class="rest-of-table">$139</td>
+                        <td class="rest-of-table">$299</td>
+                        <td class="rest-of-table">$499</td>
+                        <td class="rest-of-table">$979</td>
+                        <td class="rest-of-table">$1,389</td>
+                    </tr>
+                    <tr>
+                        <td class="missing-row-cell"></td>
+                        <td class="rest-of-table"><button class="buy-button">Buy</button></td>
+                        <td class="rest-of-table"><button class="buy-button">Buy</button></td>
+                        <td class="rest-of-table"><button class="buy-button">Buy</button></td>
+                        <td class="rest-of-table"><button class="buy-button">Buy</button></td>
+                        <td class="rest-of-table"><button class="buy-button">Buy</button></td>
+                        <td class="rest-of-table"><button class="buy-button">Buy</button></td>
+                        <td class="rest-of-table"><button class="buy-button">Buy</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div><br><br><br>
+
+    <!-- This section contains the whole "Benefits" section --> <!--  -->
+    <div id="benefits">
+        <div class="h2"><br>
+            <h2>Benefits</h2>
+            <hr>
+        </div>
+        <div id="benefits-paragraph">
+            <p>One Funded cares about your goals. Joining the best prop firm could really make the difference in your road for sucess. <br> 
+                For that reason we provide you with the best conditions in the market in order to make you comfortable.  
+            </p>
+        </div>
+        <div id="benefits-info">
+            <section class="benefit">
+                <div class="benefit-image"><br>
+                    <img src="img/platform.png" alt="Fast Payout" class="benefit-images">
+                </div>
+                <div class="benefit-title">
+                    <h3><span class="benefit-title-number">1.</span> Choose your favorite platform!</h3>
+                </div><br>
+                <div class="benefit-text">
+                    <p>We have the best platforms for your trading. Both Metatrader 4 and Metatrader 5 available for you funded account. 
+                        Trade with the one your prefer.
+                    </p>
+                </div>
+            </section>
+            <section class="benefit">
+                <div class="benefit-image"><br>
+                    <img src="img/80-20.png" alt="Fast Payout" class="benefit-images">
+                </div>
+                <div class="benefit-title">
+                    <h3><span class="benefit-title-number">2. </span> Scalable payout ratio</h3>
+                </div><br>
+                <div class="benefit-text">
+                    <p>The default payout ratio for all our funded traders is set to 80:20, but with good manage it can be increased! 
+                        Reach 25% profits of your account size within 3 months or more and get an increase up to 90:10.
+                    </p>
+                </div>
+            </section>
+            <section class="benefit">
+                <div class="benefit-image"><br>
+                    <img src="img/fast-payout.png" alt="Fast Payout" class="benefit-images">
+                </div>
+                <div class="benefit-title">
+                    <h3><span class="benefit-title-number">3.</span> Fast payout system</h3>
+                </div><br>
+                <div class="benefit-text">
+                    <p>Requested payouts are processed within 24 hours-bussiness, directly on your bank, crypto wallet or Deel Account.
+
+                    </p>
+                </div>
+            </section>
+            <section class="benefit">
+                <div class="benefit-image"><br>
+                    <img src="img/contact.png" alt="Fast Payout" class="benefit-images">
+                </div>
+                <div class="benefit-title">
+                    <h3><span class="benefit-title-number">4. </span>Always by your side</h3>
+                </div><br>
+                <div class="benefit-text">
+                    <p>Our 24/7 support team is always there for you when you need it. There be any issue or doubt, 
+                        we'll get the best suitable solution for you.
+                    </p>
+                </div>
+            </section>
+        </div><br><br>
+    </div>
+
+    <!-- This section contains the whole "Testimonies" section --> <!--  -->
+    <div id="testimonies">
+        <section class="h2"><br>
+            <h2>Check feedback from our traders!</h2><hr>
+        </section><br><br>
+        <section id="feedbacks">
+            <div class="feedback">
+                <p>"One Funded is the best prop firm in the market. If you demonstrate to be a profitable, discipline trader,
+                    they will provide you with the best conditions. On top of that, both payouts and answers requested
+                    are attended real quick"
+                </p>
+            </div>
+            <div class="feedback">
+                <p>"At first I was skeptical about this company. But after joining this company several times and once having 
+                    a live account I believe more and more that OF is a bonafide and professional company. Keep up the good work"
+                </p>
+            </div>
+            <div class="feedback">
+                <p>"Thanks a lot, OF. I'm trading with 50k live account and I've got the first payout $839.08 today with so quickly 
+                    approval and done within 12 hours via USDC. So cool!"
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- This is a section with a button that gets the user to the top -->
+    <div class="iconbutton">
+        <a href="#header"> <!-- The "svg" tag is a vectorial graph but I don't yet get how it works -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" width="63px">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 11.25l-3-3m0 0l-3 3m3-3v7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg> <!-- This button brings the user to the top of the page -->
+        </a>
+      </div><br><br><br>
+      
+      <!-- This section contains all footere information -->
+      <footer id="footer">
+        <div id="info">
+            <section id="info-image">
+                <img src="img/name-logo.png" alt="Logo" id="footer-logo">
+            </section>
+            <section id="info-text">
+                <p class="footer-paragraph">FAQ</p>
+                <p class="footer-paragraph">Privacy Police</p>
+                <p class="footer-paragraph">Terms & Conditions</p>
+                <p class="footer-paragraph">Anti-Money Laundering (AML) Guidelines</p>
+            </section>
+            <section id="info-icon">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-discord"></i>
+                <i class="fa-brands fa-tiktok"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+            </section>
+        </div><br><hr>
+        <div id="notice">
+            <p id="notice-paragraph">
+                All information provided on this site is intended solely for the study purposes related to trading on financial markets 
+                and does not serve in any way as a specific investment recommendation, business recommendation, investment opportunity 
+                analysis or similar general recommendation regarding the trading of investment instruments. Trading in financial markets 
+                is a high-risk activity and it is advised not to risk more than one can afford to lose! One Funded does not provide any 
+                of the investment services listed in the Capital Market Undertakings Act No. 000/2000 Coll. The information on this site 
+                is not directed at residents in any country or jurisdiction where such distribution or use would be contrary to local laws 
+                or regulations. Purchases of programs should not be considered deposits. All program fees are used for operation costs 
+                including, but not limited to, staff, technology and other business related expenses.
+            </p>
+            <p id="copyright">
+                2023 <i class="fa-sharp fa-regular fa-copyright"></i> Copyright - One Funded
+            </p>
+        </div>
+      </footer>
+
+</body>
+</html

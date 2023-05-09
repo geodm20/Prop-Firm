@@ -1,0 +1,468 @@
+/* ADD COMMENTS TO EdERY SECTION HERE */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Roboto:wght@300&display=swap');
+
+/* REMEMBER TO MAKE IT RESPONSIVE */
+
+body { /* This removes the space in the sections if padding and margin are not zero */
+    background-color: #D5DAE1;
+    padding: 0px;
+    margin: 0px;
+    font-family: "Roboto";
+}
+
+#header {  /* Remember to fix this section later */
+    width: 100%;
+    height: 9.375rem;
+    background-color: #C7C7C7;
+    box-shadow: 0rem 0.5rem 5rem 0.5rem #959595;
+}
+
+#logo { /* This is the image logo itself */
+    width: 15.625rem;
+    height: 7.5rem;
+    margin: 2%;
+    background: radial-gradient(25%);
+}
+
+#image-logo { /* This div contains the image logo. Used to center it*/
+    width: 30%;
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#sections { /* Contains all the header buttons */
+    width: 70%;
+    height: 100%;
+    text-align: center;
+    font-size: 1.563rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button { /* Format for all buttons */
+    margin: 0.6rem;
+    padding: 0.6rem;
+    border: 0.188rem;
+    background-color: #5497F8;
+    font-size: 1.4rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 1.5rem;
+}
+
+.button:hover { /* Format for buttons with mouse over it */
+    color: white;
+    font-weight: 500;
+    background-color: #0E56F1;
+    cursor: pointer;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+#main-page {
+    text-align: center;
+    font-family:'Roboto';
+    font-size: large;
+}
+
+#candle-logo { /* Image with candlesticks from TradingView */
+    height: 300px;
+    width: 800px;
+}
+
+#paragraph-mp { 
+    font-size: 20px;
+}
+
+#join {
+    font-weight: bolder;
+    background-color: #5497F8;
+    border-radius: 35px;
+    font-size: 40px;
+    text-decoration: none; /* Used to eliminate underline in hypertext */
+    color: black;
+    padding: 7px;
+}
+
+#join:hover {
+    color: white;
+    background-color: #0E56F1;
+    cursor: pointer;
+}
+
+#Howitworks {
+    background-color: #EFEFEF;
+}
+
+#how-it-works { /* This is a div contained within the Howitworks section */
+    justify-content:center;
+    display: flex; /* This is necessary to justify the content */
+}
+
+.works { /* Class for each section inside the How it works section */
+    margin: 20px;
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    border-style: groove;
+    border-color: black;
+    background-color: #D5DAE1;
+}
+
+.phases { /* Class for each Phase image */
+    height: 150px;
+    width: 150px;
+    padding: 15px;
+}
+
+.checkbox { /* Class for each round button-checkbox */
+    height: 20px;
+    width: 20px;
+    border: 1px;
+}
+
+
+.div-roundbox { /* Format for roundbox text */
+    font-size: 20px;
+    font-family: "Roboto";
+    font-weight: bold;
+}
+
+.phase-description { /* Div for paragraph description inside the How it works section */
+    font-size: 15px;
+    padding: 5px;
+    margin: 10px;
+    text-align:center;
+    border-style: ridge;
+    border-color: #5497F8;
+    border-radius: 5px;
+    background-color: #EFEFEF;
+}
+
+.phase-description:hover {
+    color: white;
+    background-color: #0E56F1;
+}
+
+.h2 { /* This class contains the format for every title starting at "How it works" section until the end of page */
+    font-family: "Roboto";
+    font-size: 23px;
+    text-align: center;
+}
+
+#table-section { /* Format for the table in the Program section */
+    text-align: center;
+    justify-content: center;
+    display: flex; /* Why do I always need display:flex in order to use justify-content? */
+    /* And why the align- properties never work, and just justify content? */
+}
+
+#program-paragraph {
+    font-family: "Roboto";
+    font-size: 18px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 16.5%;
+    margin-right: 15%;
+}
+
+th {
+    padding: 20px;
+}
+
+td {
+    padding: 15px;
+    border-bottom: solid 1px rgba(255, 255, 255); /* How can I delete the space between bottom lines in cells? */
+}
+
+.first-row {
+    background-color: #5497F8; /* This gives background to the first column and the first row */
+    font-size: 20px;
+}
+
+.first-column { /* This gives background to the first column and the first row */
+    background-color: #5497F8;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.missing-row-cell { /* Eliminates the first cell in the first column */
+    background-color:#D5DAE1;
+    border-color: #D5DAE1;
+}
+
+.rest-of-table {
+    background-color:#EFEFEF;
+}
+
+.buy-button { /* Style for "Buy" buttons in the table of Programs' section */
+    background-color: #5497F8;
+    font-size: 20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 15px;
+}
+
+.buy-button:hover {
+    color: white;
+    background-color: #0E56F1;
+    cursor: pointer;
+}
+
+html { 
+    scroll-behavior: smooth; /* Used to give a slower scroll when clicking reference buttons */
+}
+
+#benefits {
+    width: 100%;
+    background-color: #EFEFEF; /* True color is #EFEFEF, CHANGE IT */
+}
+
+#benefits-paragraph {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1%;
+    margin-left: 18%;
+    margin-right: 18%;
+}
+
+.benefit {
+    width: 20%;
+    height: 400px;
+    margin: 1.2%;
+    float: left;
+    background-color: #D5DAE1;
+    border-style: groove;
+    border-color: black;
+}
+
+#benefits-info { /* Used to center all the boxes of the section */
+    display: flex;
+    justify-content: center;
+}
+
+.benefit-image { /* Adjust one size for all images within sections */
+    height: 30%;
+}
+
+.benefit-title {
+        width: 100%;
+        height: 15%;
+       justify-content: center;
+        display: flex; /* Used instead of text-align because the paragraph made the section more little */
+}
+
+.benefit-text {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 5px;
+    margin: 10px;
+    border-style: ridge;
+    border-color: #5497F8;
+    border-radius: 5px;
+    background-color: #EFEFEF;
+}
+
+.benefit-text:hover {
+    color: white;
+    background-color: #0E56F1;
+}
+
+.benefit-images { /* Used to fix images to correct height of the div it's in */
+    height: 100%;
+    display: flex;
+    margin: auto; /* "margin: auto" along with display:flex works to center images in a section */
+}
+
+.benefit-title-number {
+    color: gray;
+    font-size: 30px;
+}
+
+#feedbacks{ /* To center every recommendation div */
+    display: flex;
+    justify-content: center;
+}
+
+.feedback { /* Style for every recommendation/feedback section, both fixed or entered by user */
+    background-color: #EFEFEF;
+    font-style: italic;
+    font-weight: bold;
+    height: 150px;
+    margin: 1%;
+    padding: 1%;
+    width: 25%;
+    float: left;
+    border-style: groove;
+    border-color: black;
+    border-width: 2px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.iconbutton{ /* Style for the button that takes user to the header */
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    background-color:#5497F8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 2%;
+    bottom: 3%;
+    cursor: pointer;
+  }
+
+.iconbutton:hover{
+    background-color: #0E56F1;
+}
+
+#footer { /* Stlye for the footer section  */
+    width: 100%;
+    height: 300px;
+    background-color: #C7C7C7;
+    box-shadow: 0rem 0.5rem 5rem 0.5rem #959595;
+}
+
+
+
+#info-image {
+    width: 33.33%;
+    height: 150px;
+    float: left;
+}
+
+#info-text {
+    width: 33.33%;
+    height: 150px;
+    float: left;
+}
+
+#info-icon {
+    width: 33.33%;
+    height: 150px;
+    float: left;
+}
+
+#info-image { /* Puts image in the center, both horizontally and vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer-logo {
+    height: 100px;
+}
+
+#info-text {
+    text-align: center;
+    font-weight: bold;
+}
+
+#info-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-brands { /* Format for all icons */
+    color: #5497F8;
+    margin: 10px;
+    font-size: 30px;
+}
+
+.fa-brands:hover {
+    color: #0E56F1;
+    cursor: pointer;
+}
+
+.footer-paragraph:hover {
+    cursor: pointer;
+    color: #0E56F1;
+}
+
+#notice {
+    width: 100%;
+}
+
+#notice-paragraph {
+    font-size: 13px;
+    margin: 2%;
+}
+
+#copyright {
+    font-weight: bold;
+    text-align: center;
+}
+
+/* This section contains all style for the "contact" section of contact.html */
+
+#contacttitle{ /* Section's title div */
+    height: 700px;
+}
+
+#contact-font { /* Title style */
+    font-family: "Roboto";
+    font-size: 50px;
+    text-align: center;
+}
+
+#textbox { /* Second div with information and formulary  */
+    background-color: #EFEFEF;
+    height: 450px;
+    margin: 60px;
+    border-color: black;
+    border-style: groove;
+}
+
+#information { /* Fixed information */
+    width: 50%;
+    height: 100%;
+    float: left;
+    text-align: center;
+}
+
+#formulary { /* Formulary  */
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.asterisk {
+    color: red;
+    font-weight: bold;
+}
+
+::placeholder{ /* Format for the font-family in placeholder's input */
+    font-family: "Roboto";
+}
+
+.input { /* Moving input area from the left extreme */
+    width: 80%;
+    margin-left: 5%;
+}
+
+#submit {
+    margin-left: 5%;
+    background-color: #5497F8;
+    font-family: "Roboto";
+    font-size: 20px;
+    padding: 2%;
+    border-radius: 30px;
+    width: 100px;
+}
+
+#submit:hover {
+    background-color: #0E56F1;
+    color: white;
+    font-weight: bold;
+}
