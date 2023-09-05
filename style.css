@@ -1,72 +1,222 @@
-/* ADD COMMENTS TO EdERY SECTION HERE */
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Roboto:wght@300&display=swap');
 
-/* REMEMBER TO MAKE IT RESPONSIVE */
+html { 
+    scroll-behavior: smooth; /* Used to give a slower scroll when clicking reference buttons */
+}
+
+:root {
+    --firstbackgroundcolor: #D5DAE1;
+    --secbackgroundcolor: #EFEFEF;
+    --whitecolor: white;
+    --blackcolor: black;
+    --regbuttoncolor: #5497F8;
+    --hovbuttoncolor: #0E56F1;
+    --boxshadow: #959595;
+    --h3size: 1.3rem;
+    --basefsize: 1rem;
+    --descriptionsize: 1.2rem;
+    --headfoot: #C7C7C7;
+}
 
 body { /* This removes the space in the sections if padding and margin are not zero */
-    background-color: #D5DAE1;
+    background-color: var(--firstbackgroundcolor);
     padding: 0px;
     margin: 0px;
     font-family: "Roboto";
+    box-sizing: border-box;
+    min-width: 320px;
 }
 
-#header {  /* Remember to fix this section later */
+/* THIS CONTAINS THE SIGN UP SHOWUP MENU STYLES */
+.sign-up-form {
+    display: none;
+    position: absolute;
+}
+
+.title {
+    font-size: 2.2rem;
+    color: var(--blackcolor);
+    margin-bottom: 0.55rem;
+}
+
+.input-field {
+    max-width: 320px;
     width: 100%;
-    height: 9.375rem;
-    background-color: #C7C7C7;
-    box-shadow: 0rem 0.5rem 5rem 0.5rem #959595;
+    background-color: var(--whitecolor);
+    margin: 10px 0;
+    border-radius: 3.5rem;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+    position: relative;
+}
+
+.input-field i {
+    text-align: center;
+    line-height: 55px;
+    color: var(--blackcolor);
+    font-size: 1.1rem;
+}
+
+.input-field input {
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    font-family: "Roboto";
+}
+
+.input-field input::placeholder {
+    color: var(--boxshadow);
+    font-weight: 500;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+}
+
+.social-icon {
+    height: 46px;
+    width: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0.45rem;
+    color: var(--regbuttoncolor);
+    border-radius: 50%;
+    border: 1px solid var(--regbuttoncolor);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.social-icon:hover {
+    color: var(--hovbuttoncolor);
+    border-color: var(--hovbuttoncolor);
+}
+
+.remove {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background-color: rgba(214, 66, 66, 0.80);
+    padding: 0.3rem;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    transition: 0.3s ease;
+    font-weight: bold;
+}
+
+.remove:hover {
+    cursor: pointer;
+    background-color: rgba(233, 16, 16, 0.942);
+}
+
+.btn {
+    width: 150px;
+    background-color: var(--regbuttoncolor);
+    border: none;
+    height: 3rem;
+    border-radius: 3.5rem;
+    color: var(--whitecolor);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn:hover {
+    background-color: var(--hovbuttoncolor);
+}
+
+/* Active section for "form" */
+.sign-up-form.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    width: 50%;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--headfoot);
+    width: 360px;
+    border-radius: 3rem;
+}
+
+/* THIS SECTION CONTAINS THE HEADER ELEMENTS ONLY */
+
+#header {
+    background-color: var(--headfoot);
+    box-shadow: 0rem 0.5rem 5rem 0.5rem var(--boxshadow);
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    position: sticky;
+    top: 0;
 }
 
 #logo { /* This is the image logo itself */
-    width: 15.625rem;
-    height: 7.5rem;
-    margin: 2%;
-    background: radial-gradient(25%);
+    width: 7rem;
+    margin: 0.75rem;
 }
 
 #image-logo { /* This div contains the image logo. Used to center it*/
     width: 30%;
-    height: 100%;
-    float: left;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-left: 4rem;
 }
 
-#sections { /* Contains all the header buttons */
+.sections { /* Contains all the header's buttons */
     width: 70%;
-    height: 100%;
-    text-align: center;
-    font-size: 1.563rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+    overflow: hidden;
+    transition: 0.3s ease;
 }
 
-.button { /* Format for all buttons */
+.button, .signup { /* Format for all "a" buttons */
     margin: 0.6rem;
-    padding: 0.6rem;
-    border: 0.188rem;
-    background-color: #5497F8;
+    padding: 0.4rem;
+    background-color: var(--regbuttoncolor);
     font-size: 1.4rem;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     border-radius: 1.5rem;
+    transition: 0.3s ease;
+    text-decoration: none;
+    color: var(--blackcolor);
 }
 
-.button:hover { /* Format for buttons with mouse over it */
-    color: white;
-    font-weight: 500;
-    background-color: #0E56F1;
+.button:hover, .signup:hover { /* Format for buttons with mouse over it */
+    color: var(--whitecolor);
+    background-color: var(--hovbuttoncolor);
     cursor: pointer;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+/* THIS WHOLE SECTION CONTAINS THE MAIN BODY */
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+/* MAIN DIVISION DIV */
 
 #main-page {
     text-align: center;
-    font-family:'Roboto';
     font-size: large;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    width: 100%;
 }
 
 #candle-logo { /* Image with candlesticks from TradingView */
@@ -75,394 +225,824 @@ body { /* This removes the space in the sections if padding and margin are not z
 }
 
 #paragraph-mp { 
-    font-size: 20px;
+    font-size: var(--descriptionsize);
+    margin-bottom: 2rem;
 }
 
 #join {
     font-weight: bolder;
-    background-color: #5497F8;
-    border-radius: 35px;
-    font-size: 40px;
-    text-decoration: none; /* Used to eliminate underline in hypertext */
-    color: black;
-    padding: 7px;
+    background-color: var(--regbuttoncolor);
+    border-radius: 2rem;
+    font-size: 2.3rem;
+    text-decoration: none;
+    color: var(--blackcolor);
+    padding: 0.7rem;
+    transition: 0.3s ease;
+    display: inline-block; /* This allows the "transform: scale()" property to work. It doesn't work with inline elements */
 }
 
 #join:hover {
-    color: white;
-    background-color: #0E56F1;
+    color: var(--whitecolor);
+    background-color: var(--hovbuttoncolor);
     cursor: pointer;
+    transform: scale(1.25);
 }
 
+/* HOW IT WORKS DIV */
+
 #Howitworks {
-    background-color: #EFEFEF;
+    background-color: var(--secbackgroundcolor);
+    box-shadow: 0rem 0.2rem 2rem 0.2rem var(--boxshadow);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.h2 { /* This class contains the format for every title starting at "How it works" section until the end of page */
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.borderbottom {
+    border-bottom: 1px solid gray;
+    width: 320px;
+    margin-bottom: 2rem;
 }
 
 #how-it-works { /* This is a div contained within the Howitworks section */
-    justify-content:center;
-    display: flex; /* This is necessary to justify the content */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 5rem;
 }
 
 .works { /* Class for each section inside the How it works section */
-    margin: 20px;
-    width: 400px;
-    height: 400px;
+    margin: 1.15rem;
+    width: 350px;
     text-align: center;
     border-style: groove;
-    border-color: black;
-    background-color: #D5DAE1;
+    border-color: var(--blackcolor);
+    background-color: var(--firstbackgroundcolor);
 }
 
 .phases { /* Class for each Phase image */
     height: 150px;
     width: 150px;
-    padding: 15px;
+    padding: 0.5rem;
 }
 
-.checkbox { /* Class for each round button-checkbox */
-    height: 20px;
-    width: 20px;
-    border: 1px;
-}
-
-
-.div-roundbox { /* Format for roundbox text */
-    font-size: 20px;
-    font-family: "Roboto";
-    font-weight: bold;
+h3 { /* Format for roundbox text */
+    font-size: var(--h3size);
+    margin: 0.3rem;
 }
 
 .phase-description { /* Div for paragraph description inside the How it works section */
-    font-size: 15px;
+    font-size: var(--basefsize);
     padding: 5px;
-    margin: 10px;
-    text-align:center;
+    margin: 0 15px 30px;
     border-style: ridge;
-    border-color: #5497F8;
-    border-radius: 5px;
-    background-color: #EFEFEF;
+    border-color: var(--regbuttoncolor);
+    border-radius: 15px;
+    background-color: var(--secbackgroundcolor);
+    transition: 0.3s ease;
 }
 
-.phase-description:hover {
-    color: white;
-    background-color: #0E56F1;
+.phase-description:hover, .benefit-text:hover {
+    color: var(--whitecolor);
+    background-color: var(--hovbuttoncolor);
 }
 
-.h2 { /* This class contains the format for every title starting at "How it works" section until the end of page */
-    font-family: "Roboto";
-    font-size: 23px;
-    text-align: center;
-}
+/* PROGRAMS SECTION */
 
-#table-section { /* Format for the table in the Program section */
-    text-align: center;
+#programs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    display: flex; /* Why do I always need display:flex in order to use justify-content? */
-    /* And why the align- properties never work, and just justify content? */
+    align-items: center;
 }
 
 #program-paragraph {
-    font-family: "Roboto";
-    font-size: 18px;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    margin-left: 16.5%;
-    margin-right: 15%;
+    font-size: var(--descriptionsize);
+    margin: 0rem 7rem;
+    text-align: justify;
 }
 
-th {
-    padding: 20px;
-}
-
-td {
-    padding: 15px;
-    border-bottom: solid 1px rgba(255, 255, 255); /* How can I delete the space between bottom lines in cells? */
-}
-
-.first-row {
-    background-color: #5497F8; /* This gives background to the first column and the first row */
-    font-size: 20px;
-}
-
-.first-column { /* This gives background to the first column and the first row */
-    background-color: #5497F8;
-    font-size: 15px;
+/* First table */
+#balance {
+    font-size: 1.25rem;
     font-weight: bold;
+    display: none;
+    margin-left: 0;
 }
 
-.missing-row-cell { /* Eliminates the first cell in the first column */
-    background-color:#D5DAE1;
-    border-color: #D5DAE1;
+#table-buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0rem;
+    width: 100%;
 }
 
-.rest-of-table {
-    background-color:#EFEFEF;
+#select-buttons, #comparison {
+    margin: 0.75rem;
+    width: 100%;
+    text-align: center;
 }
 
-.buy-button { /* Style for "Buy" buttons in the table of Programs' section */
-    background-color: #5497F8;
-    font-size: 20px;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    border-radius: 15px;
+#select-buttons {
+    display: none;
+    margin-left: 0;
+    margin-bottom: 2rem;
 }
 
-.buy-button:hover {
-    color: white;
-    background-color: #0E56F1;
+.sbutton, #comparison a {
+    background-color: var(--regbuttoncolor);
+    color: var(--whitecolor);
+    padding: 0.7rem 1.30rem;
+    margin: 0.5rem;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    transition: 0.3s ease;
+    font-weight: bold;
+    font-size: 1rem;
+    display: inline-block;
+}
+
+.sbutton:hover, #comparison a:hover {
+    background-color: var(--hovbuttoncolor);
+    font-weight: bolder;
     cursor: pointer;
 }
 
-html { 
-    scroll-behavior: smooth; /* Used to give a slower scroll when clicking reference buttons */
+#table-single {
+    margin-bottom: 5rem;
+    display: none;
 }
+
+#table1 th, #table1 td{
+    padding: 1rem 3rem;
+    text-align: center;
+}
+
+/* Active class for table1 elements */
+#table-single.active, #select-buttons.active, #balance.active {
+    display: block;
+}
+
+/* Second table */
+#table2 {
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8rem;
+    margin-top: 2rem;
+}
+
+#table2 th {
+    padding: 1.2rem;
+}
+
+#table2 td {
+    padding: 0.95rem;
+    border: solid 2px var(--firstbackgroundcolor); /* How can I delete the space between bottom lines in cells? */
+}
+
+.first-row {
+    background-color: var(--hovbuttoncolor); /* This gives background to the first column and the first row */
+    font-size: var(--descriptionsize);
+    color: var(--whitecolor);
+}
+
+.first-column { /* This gives background to the first column and the first row */
+    background-color: var(--hovbuttoncolor);
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--whitecolor);
+}
+
+.missing-row-cell { /* Eliminates the first cell in the first column */
+    border-bottom: solid 1px var(--firstbackgroundcolor) !important;
+}
+
+.rest-of-table {
+    background-color: var(--secbackgroundcolor);
+}
+
+.buy-button { /* Style for "Buy" buttons in the table of Programs' section */
+    background-color: var(--regbuttoncolor);
+    font-size: 1.2rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border-radius: 1rem;
+    transition: 0.3s ease;
+    color: var(--whitecolor);
+    border-color: var(--regbuttoncolor);
+}
+
+.buy-button:hover {
+    background-color: var(--hovbuttoncolor);
+    cursor: pointer;
+}
+
+/* Active class for table2 */
+#table-section.active {
+    display: none;
+    transition: 0.3s ease;
+}
+
+/* BENEFITS SECTION */
 
 #benefits {
     width: 100%;
-    background-color: #EFEFEF; /* True color is #EFEFEF, CHANGE IT */
+    background-color: var(--secbackgroundcolor);
+    box-shadow: 0rem 0.5rem 5rem 0.5rem var(--boxshadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #benefits-paragraph {
     text-align: center;
-    font-size: 18px;
+    font-size: var(--descriptionsize);
+    margin: 0rem 8rem;
+}
+
+#benefits-info {
     display: flex;
     justify-content: center;
-    margin-bottom: 1%;
-    margin-left: 18%;
-    margin-right: 18%;
+    flex-wrap: wrap;
+    margin-bottom: 5rem;
 }
 
 .benefit {
-    width: 20%;
+    width: 320px;
     height: 400px;
-    margin: 1.2%;
-    float: left;
-    background-color: #D5DAE1;
+    margin: 1rem;
+    background-color: var(--firstbackgroundcolor);
     border-style: groove;
-    border-color: black;
-}
-
-#benefits-info { /* Used to center all the boxes of the section */
+    border-color: var(--blackcolor);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .benefit-image { /* Adjust one size for all images within sections */
-    height: 30%;
-}
-
-.benefit-title {
-        width: 100%;
-        height: 15%;
-       justify-content: center;
-        display: flex; /* Used instead of text-align because the paragraph made the section more little */
-}
-
-.benefit-text {
     display: flex;
     justify-content: center;
-    text-align: center;
-    align-items: center;
-    padding: 5px;
-    margin: 10px;
-    border-style: ridge;
-    border-color: #5497F8;
-    border-radius: 5px;
-    background-color: #EFEFEF;
-}
-
-.benefit-text:hover {
-    color: white;
-    background-color: #0E56F1;
 }
 
 .benefit-images { /* Used to fix images to correct height of the div it's in */
-    height: 100%;
-    display: flex;
-    margin: auto; /* "margin: auto" along with display:flex works to center images in a section */
+    height: 120px;
+    margin: 1rem;
 }
 
 .benefit-title-number {
     color: gray;
-    font-size: 30px;
+    font-size: 2rem;
+}
+
+.benefit-text {
+    text-align: center;
+    padding: 0.4rem;
+    margin: 1rem;
+    border-style: ridge;
+    border-color: var(--regbuttoncolor);
+    border-radius: 1rem;
+    background-color: var(--secbackgroundcolor);
+    transition: 0.3s ease;
+}
+
+/* TESTIMONIES DIV */
+
+#testimonies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.test {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #feedbacks{ /* To center every recommendation div */
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 7rem;
 }
 
 .feedback { /* Style for every recommendation/feedback section, both fixed or entered by user */
-    background-color: #EFEFEF;
+    background-color: var(--secbackgroundcolor);
     font-style: italic;
     font-weight: bold;
-    height: 150px;
-    margin: 1%;
-    padding: 1%;
-    width: 25%;
-    float: left;
+    margin: 1rem;
+    padding: 2rem;
+    width: 300px;
     border-style: groove;
-    border-color: black;
+    border-color: var(--blackcolor);
     border-width: 2px;
     text-align: center;
     display: flex;
     align-items: center;
 }
 
-.iconbutton{ /* Style for the button that takes user to the header */
-    width: 45px;
-    height: 45px;
+/* CONTACT SECTION */
+#contacttitle {
+    background-color: var(--secbackgroundcolor);
+    box-shadow: 0rem 0.5rem 5rem 0.5rem var(--boxshadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#margin-title {
+    margin-top: 8rem;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+#textbox { /* Second div with information and formulary  */
+    background-color: var(--secbackgroundcolor);
+    margin: 4rem;
+    border-color: var(--blackcolor);
+    border-style: groove;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+}
+
+#information { /* Fixed information */
+    width: 50%;
+    text-align: center;
+}
+
+#formulary { /* Formulary  */
+    width: 50%;
+    margin-top: 2rem;
+}
+
+.asterisk {
+    color: red;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+::placeholder{ /* Format for the font-family in placeholder's input */
+    font-family: "Roboto";
+    font-style: italic;
+}
+
+#information {
+    font-size: 1rem;
+}
+
+#formulary {
+    text-align: start;
+}
+
+#formulary h3, #information h3 {
+    font-size: var(--h3size);
+}
+
+.input { /* Moving input area from the left extreme */
+    width: 80%;
+    margin-left: 2rem;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+input {
+    margin-bottom: 0.5rem;
+}
+
+#submit {
+    margin-left: 2rem;
+    background-color: var(--regbuttoncolor);
+    font-family: "Roboto";
+    font-size: 1.15rem;
+    padding: 1rem;
+    border-radius: 2rem;
+    width: 100px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--regbuttoncolor)
+}
+
+#submit:hover {
+    background-color: var(--hovbuttoncolor);
+    color: var(--whitecolor);
+    font-weight: bold;
+}
+
+ /* SCROLLUP BUTTON */
+
+.iconbutton{
+    width: 40px;
+    height: 40px;
     border-radius: 100%;
-    background-color:#5497F8;
+    background-color: var(--regbuttoncolor);
     display: flex;
     align-items: center;
     justify-content: center;
     position: fixed;
-    right: 2%;
-    bottom: 3%;
+    right: 1rem;
+    bottom: 1rem;
     cursor: pointer;
-  }
+}
 
 .iconbutton:hover{
-    background-color: #0E56F1;
+    background-color: var(--hovbuttoncolor);
 }
 
-#footer { /* Stlye for the footer section  */
+/* END OF MAIN SECTION */
+
+/* FOOTER */
+
+#footer { 
     width: 100%;
-    height: 300px;
-    background-color: #C7C7C7;
-    box-shadow: 0rem 0.5rem 5rem 0.5rem #959595;
+    height: 100%;
+    background-color: var(--headfoot);
+    box-shadow: 0rem 0.5rem 5rem 0.5rem var(--boxshadow);
 }
 
-
+#info {
+    display: flex;
+}
 
 #info-image {
-    width: 33.33%;
-    height: 150px;
-    float: left;
-}
-
-#info-text {
-    width: 33.33%;
-    height: 150px;
-    float: left;
-}
-
-#info-icon {
-    width: 33.33%;
-    height: 150px;
-    float: left;
-}
-
-#info-image { /* Puts image in the center, both horizontally and vertically */
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #footer-logo {
-    height: 100px;
+    height: 80px;
 }
 
 #info-text {
     text-align: center;
     font-weight: bold;
+    width: 100%;
+}
+
+.footer-paragraph {
+    margin: 0.3rem;
+}
+
+.footer-paragraph:hover {
+    cursor: pointer;
+    color: var(--hovbuttoncolor);
 }
 
 #info-icon {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.fa-brands { /* Format for all icons */
-    color: #5497F8;
-    margin: 10px;
-    font-size: 30px;
-}
-
-.fa-brands:hover {
-    color: #0E56F1;
-    cursor: pointer;
-}
-
-.footer-paragraph:hover {
-    cursor: pointer;
-    color: #0E56F1;
-}
-
-#notice {
     width: 100%;
 }
 
+.fa-brands { /* Format for all icons */
+    color: var(--regbuttoncolor);
+    margin: 0.6rem;
+    font-size: 2rem;
+    transition: 0.3s ease;
+}
+
+.fa-brands:hover {
+    color: var(--hovbuttoncolor);
+    cursor: pointer;
+    bottom: 0.3rem;
+    transform: translateY(-0.3rem);
+}
+
 #notice-paragraph {
-    font-size: 13px;
-    margin: 2%;
+    font-size: 0.8rem;
+    margin: 1.5rem;
 }
 
 #copyright {
     font-weight: bold;
     text-align: center;
+    margin-bottom: 0;
 }
 
-/* This section contains all style for the "contact" section of contact.html */
+/* MEDIA QUERIES FOR RESPONSIVENESS */
 
-#contacttitle{ /* Section's title div */
-    height: 700px;
+@media screen and (max-width: 1155px) {
+    .button, .signup {
+        font-size: 1rem;
+    }
+    #table2 th, #table2 td {
+        padding: 0.5rem;
+    }
+    #textbox {
+        width: 800px;
+    }
 }
 
-#contact-font { /* Title style */
-    font-family: "Roboto";
-    font-size: 50px;
-    text-align: center;
+@media screen and (max-width: 1000px) {
+    #footer {
+        font-size: 0.75rem;
+    }
+    .fa-brands { /* Format for all icons */
+        margin: 0.5rem;
+        font-size: 1.5rem;
+    }
+    #notice-paragraph {
+        font-size: 0.6rem;
+        margin: 1.2rem;
+    }
+    #candle-logo {
+        width: 600px;
+        height: 250px;
+    }
+    #textbox {
+        width: 700px;
+    }
 }
 
-#textbox { /* Second div with information and formulary  */
-    background-color: #EFEFEF;
-    height: 450px;
-    margin: 60px;
-    border-color: black;
-    border-style: groove;
+@media screen and (max-width: 925px) {
+    .button, .signup {
+        font-size: 0.8rem;
+        padding: 0.3rem;
+        margin: 0.4rem;
+    }
+    .first-column, .first-row, .rest-of-table, .buy-button {
+        font-size: 0.8rem;
+    }
+    #benefits-paragraph, #program-paragraph {
+        font-size: 1rem;
+    }
 }
 
-#information { /* Fixed information */
-    width: 50%;
-    height: 100%;
-    float: left;
-    text-align: center;
+@media screen and (max-width: 725px) {
+    .button, .signup {
+        font-size: 0.65rem;
+    }
+    .iconbutton {
+        width: 32px;
+        height: 32px;
+    }
+    svg {
+        width: 40px;
+    }
+    #textbox {
+        width: 500px;
+    }
+    #information h3, #formulary h3{
+        font-size: 1rem;
+    }
+    #information p, .input{
+        font-size: 0.8rem;
+    }
+    #submit {
+        font-size: 0.8rem;
+    }
+    .input {
+        margin-left: 0;
+    }
+    #comparison a, .sbutton {
+        font-size: 0.85rem;
+        padding: 0.5rem;
+    }
 }
 
-#formulary { /* Formulary  */
-    width: 50%;
-    height: 100%;
-    float: left;
+@media screen and (max-width: 660px) {
+    #candle-logo {
+        width: 400px;
+        height: 180px;
+    }
+    .first-column, .first-row, .rest-of-table, .buy-button {
+        font-size: 0.65rem;
+    }
+    #benefits-paragraph {
+        margin: 0rem 5rem;
+    }
+    .sections {
+        display: none;
+    }
+    #info-icon {
+        flex-wrap: wrap;
+    }
+    .fa-brands {
+        font-size: 1.2rem;
+        margin: 0.3rem;
+    }
+    #info-text {
+        font-size: 0.65rem;
+    }
+    #notice-paragraph {
+        font-size: 0.55rem;
+    }
+    /* Active styles for .sections buttons */
+    .sections.active {
+        position: absolute;
+        top: 85px;
+        right: 0;
+        width: 100%;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        background: var(--headfoot);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        box-shadow: 0px 5px 5px var(--boxshadow);
+    }
+    /* Active styles for buttons */
+    .button.active, .signup.active {
+        font-size: 0.9rem;
+        margin: 0.3rem 0.8rem;
+    }
+    .toggle {
+        position: absolute;
+        width: 32px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        top: 25px;
+        right: 30px;
+    }
+    /* Toggle "div" with after and before elements to simulate a sandwich dropdown menu */
+    .toggle::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: var(--regbuttoncolor);
+        transform: translateY(-10px);
+        box-shadow: 0 10px 0 var(--regbuttoncolor);
+        transition: 0.25s;
+    }
+    .toggle::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: var(--regbuttoncolor);
+        transform: translateY(10px);
+        transition: 0.25s;
+    }
+    /* Active styles for the clicked toggle button */
+    .toggle.active {
+        right: 30px;
+    }
+      .toggle.active::before {
+        transform: translateY(0px) rotate(45deg);
+        box-shadow: 0 0 0 var(--regbuttoncolor);
+    }
+      .toggle.active::after {
+        transform: translateY(0px) rotate(-45deg);
+    }
+    #textbox { /* Second div with information and formulary  */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 3rem 0rem;
+        width: 320px;
+    }
+    #formulary {
+        width: 80%;
+    }
+    #contact-font {
+        font-size: 2.5rem;
+    }
+    #information {
+        border-bottom: 1px solid var(--blackcolor);
+    }
+    .input { /* Moving input area from the left extreme */
+    margin-left: 1rem;
+    }
+    #table1 th, #table1 td {
+        padding: 0.8rem 1.2rem ;
+        font-size: 0.85rem;
+        margin: 0;
+    }
 }
 
-.asterisk {
-    color: red;
-    font-weight: bold;
+@media screen and (max-width: 540px) {
+    .first-column, .first-row, .rest-of-table, .buy-button, #table1 {
+        font-size: 0.55rem;
+        padding: 0.15rem;
+        margin: 0.15rem;
+    }
+    #benefits-paragraph, #program-paragraph {
+        margin: 0rem 3.5rem;
+    }
+    #table1 td {
+        padding: 0.5rem;
+    }
+    #comparison a, .sbutton {
+        font-size: 0.75rem;
+    }
 }
 
-::placeholder{ /* Format for the font-family in placeholder's input */
-    font-family: "Roboto";
-}
-
-.input { /* Moving input area from the left extreme */
-    width: 80%;
-    margin-left: 5%;
-}
-
-#submit {
-    margin-left: 5%;
-    background-color: #5497F8;
-    font-family: "Roboto";
-    font-size: 20px;
-    padding: 2%;
-    border-radius: 30px;
-    width: 100px;
-}
-
-#submit:hover {
-    background-color: #0E56F1;
-    color: white;
-    font-weight: bold;
+@media screen and (max-width: 450px) {
+    .first-column, .first-row, .rest-of-table, .buy-button {
+        font-size: 0.42rem;
+        padding: 0;
+        margin: 0;
+    }
+    #benefits-paragraph, #program-paragraph {
+        font-size: 0.8rem;
+        margin: 0rem 2.5rem;
+    }
+    #candle-logo {
+        width: 300px;
+        height: 170px;
+    }
+    #image-logo { /* This div contains the image logo. Used to center it*/
+        margin-left: 0rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    hr:first-of-type {
+      margin: 3rem 0;  
+    }
+    #paragraph-mp {
+        margin: 3rem 0;
+    }
+    .works {
+        width: 300px;
+    }
+    .phases {
+        height: 100px;
+        width: 100px;
+    }
+    .phase-description, .benefit-text{
+        font-size: 0.85rem;
+    }
+    h3 {
+        font-size: 1.2rem;
+    }
+    .benefit {
+        width: 300px;
+        height: 350px;
+    }
+    .benefit-images { /* Used to fix images to correct height of the div it's in */
+        height: 100px;
+    }
+    .feedback {
+        width: 250px;
+    }
+    #lasthr {
+        margin: 0rem 0;  
+    }
+    #notice-paragraph {
+        font-size: 0.5rem;
+        margin: 0.5rem;
+    }
+    .footer-paragraph {
+        font-size: 0.6rem;
+    }
+    #submit {
+        margin-left: 4.5rem;
+    }
+    #comparison a, .sbutton{
+        font-size: 0.75rem;
+        padding: 0.4rem;
+        margin: 0rem 0rem;
+    }
+    #table1 td, #table1 th {
+        font-size: 0.7rem;
+        padding: 0.75rem;
+    }
+    #table-buttons {
+        width: 100%;
+        margin: 0;
+    }
+    #balance {
+        width: 100%;
+        text-align: center;
+    }
+    #comparison {
+        width: 100%;
+    }
+    .sbutton {
+        margin-bottom: 0.4rem;
+    }
+    #balance {
+        font-size: 0.85rem;
+        margin: 0;
+    }
+    #table2 td, #table2 th {
+        font-size: 0.52rem;
+        padding: 0.15rem;
+    }
 }
