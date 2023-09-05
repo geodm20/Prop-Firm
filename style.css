@@ -914,7 +914,7 @@ input {
         align-items: center;
         flex-direction: column;
         margin: 3rem 0rem;
-        width: 320px;
+        width: 80%;
     }
     #formulary {
         width: 80%;
@@ -992,7 +992,7 @@ input {
         font-size: 1.2rem;
     }
     .benefit {
-        width: 300px;
+        width: 100%;
         height: 350px;
     }
     .benefit-images { /* Used to fix images to correct height of the div it's in */
