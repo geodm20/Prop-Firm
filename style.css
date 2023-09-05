@@ -979,7 +979,7 @@ input {
         margin: 3rem 0;
     }
     .works {
-        width: 300px;
+        width: 100%;
     }
     .phases {
         height: 100px;
@@ -999,7 +999,7 @@ input {
         height: 100px;
     }
     .feedback {
-        width: 250px;
+        width: 100%;
     }
     #lasthr {
         margin: 0rem 0;  
