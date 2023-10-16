@@ -25,6 +25,7 @@ body { /* This removes the space in the sections if padding and margin are not z
     font-family: "Roboto";
     box-sizing: border-box;
     min-width: 320px;
+    overflow-x: hidden;
 }
 
 /* THIS CONTAINS THE SIGN UP SHOWUP MENU STYLES */
@@ -163,6 +164,7 @@ body { /* This removes the space in the sections if padding and margin are not z
     width: 100%;
     position: sticky;
     top: 0;
+    z-index: 2;
 }
 
 #logo { /* This is the image logo itself */
@@ -239,6 +241,7 @@ main {
     padding: 0.7rem;
     transition: 0.3s ease;
     display: inline-block; /* This allows the "transform: scale()" property to work. It doesn't work with inline elements */
+    margin-bottom: 3rem;
 }
 
 #join:hover {
@@ -246,6 +249,45 @@ main {
     background-color: var(--hovbuttoncolor);
     cursor: pointer;
     transform: scale(1.25);
+}
+
+/* API INFO SECTION */
+
+.swiper-title {
+    margin-bottom: 2.5rem;
+}
+
+.swiper {
+    width: 400px;
+    height: 200px;
+    background-color: var(--secbackgroundcolor);
+    border-radius: 30px;
+}
+
+.pair-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto";
+}
+
+.pair-container img {
+    width: 60px;
+}
+
+.first-span {
+    font-weight: bold;
+}
+
+.first-span, .sec-span {
+    font-size: 1.2rem;
+}
+
+.pair-container img, .first-span, .sec-span {
+    margin: 6px;
 }
 
 /* HOW IT WORKS DIV */
@@ -282,8 +324,8 @@ main {
     margin: 1.15rem;
     width: 350px;
     text-align: center;
-    border-style: groove;
-    border-color: var(--blackcolor);
+    border-style: none;
+    border-radius: 20px;
     background-color: var(--firstbackgroundcolor);
 }
 
@@ -483,8 +525,8 @@ h3 { /* Format for roundbox text */
     height: 400px;
     margin: 1rem;
     background-color: var(--firstbackgroundcolor);
-    border-style: groove;
-    border-color: var(--blackcolor);
+    border-style: none;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -544,8 +586,8 @@ h3 { /* Format for roundbox text */
     margin: 1rem;
     padding: 2rem;
     width: 300px;
-    border-style: groove;
-    border-color: var(--blackcolor);
+    border-style: none;
+    border-radius: 20px;
     border-width: 2px;
     text-align: center;
     display: flex;
@@ -572,10 +614,10 @@ h3 { /* Format for roundbox text */
 }
 
 #textbox { /* Second div with information and formulary  */
-    background-color: var(--secbackgroundcolor);
+    background-color: var(--firstbackgroundcolor);
     margin: 4rem;
-    border-color: var(--blackcolor);
-    border-style: groove;
+    border-style: none;
+    border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1044,5 +1086,12 @@ input {
     #table2 td, #table2 th {
         font-size: 0.52rem;
         padding: 0.15rem;
+    }
+    .swiper {
+        width: 300px;
+        height: 150px;
+    }
+    .first-span, .sec-span {
+        font-size: 1rem;
     }
 }

@@ -122,3 +122,120 @@ comparison.addEventListener("click", function() {
     balance.classList.toggle("active");
     tableSection.classList.toggle("active");
 });
+
+
+//This section is the swiper library
+
+window.onload = function() { //window.onload used to start this function only after DOM elements are uploaded
+const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+});
+}
+
+// Create 6 divs with classes "swiper-slide" and appendChild to div "swiper-wrapper"
+
+let swiperWrapper = document.querySelector(".swiper-wrapper")
+for (let i = 0; i < 6; i++) {
+let swiperSlide = document.createElement("div")
+swiperSlide.className = "swiper-slide"
+swiperWrapper.appendChild(swiperSlide)
+}
+
+// Create another divs inside with class "pair-container"
+
+let swiperSlides = document.querySelectorAll(".swiper-slide")
+swiperSlides.forEach((slide) => {
+let slides = document.createElement("div")
+slides.className = "pair-container"
+slide.appendChild(slides)
+})
+
+// Add img and both spans to the pair-container 
+
+let pairContainers = document.querySelectorAll(".pair-container")
+pairContainers.forEach((pair) => {
+let imgPairs = document.createElement("img")
+imgPairs.className = "pair-img"
+pair.appendChild(imgPairs)
+let firstSpan = document.createElement("span")
+let secSpan = document.createElement("span")
+firstSpan.className = "first-span"
+secSpan.className = "sec-span"
+pair.appendChild(firstSpan)
+pair.appendChild(secSpan)
+})
+
+// Arrays with img sources, fistSpan names and secSpan properties
+
+const imgSources = [
+"https://cfcdn-plus.olymptrade.com/fe/312_231012180945/bundle/images/pair-icon-eurusd.img.svg",
+"https://cfcdn-plus.olymptrade.com/fe/312_231012180945/bundle/images/pair-icon-gbpusd.img.svg",
+"https://cfcdn-plus.olymptrade.com/fe/312_231012180945/bundle/images/pair-icon-usdcad.img.svg",
+"https://cfcdn-plus.olymptrade.com/fe/312_231012180945/bundle/images/pair-icon-audusd.img.svg",
+"https://cfcdn-plus.olymptrade.com/fe/312_231012180945/bundle/images/pair-icon-nzdusd.img.svg",
+"https://cfcdn-plus.olymptrade.com/fe/312_231012180945/bundle/images/pair-icon-usdchf.img.svg",
+"https://cfcdn-plus.olymptrade.com/fe/312_231012180945/bundle/images/pair-icon-usdjpy.img.svg"
+]
+
+const firstSpanNames = ["EURUSD", "GBPUSD", "USDCAD", "AUDUSD", "NZDUSD", "USDCHF", "USDJPY"]
+
+const secSpanNames = ["EUR", "GBP", "CAD", "AUD", "NZD", "CHF", "JPY"]
+
+// Add imgSources to pair-imgs
+
+let imgPairs = document.querySelectorAll(".pair-img")
+imgPairs.forEach((img, index) => {
+img.src = imgSources[index]
+})
+
+// Add names to firstSpans
+
+let firstSpans = document.querySelectorAll(".first-span")
+firstSpans.forEach((span, index) => {
+span.textContent = firstSpanNames[index]
+})
+
+// API CALL
+
+async function fetchCurrencyData() {
+    try {
+        const apiKey = '6156e80e6e5148c2bc6480ecf27a4b9f';
+        const endpoint = 'https://api.currencyfreaks.com/v2.0/rates/latest';
+
+        // Define the parameters for the API request
+        const params = new URLSearchParams({
+            apikey: apiKey,
+        });
+
+        // Construct the full URL with parameters
+        const apiUrl = `${endpoint}?${params.toString()}`;
+
+        // Make a GET request to the CurrencyLayer API
+        const response = await fetch(apiUrl);
+
+        if (response.ok) {
+            const data = await response.json();
+            // Add data from API to secSpans
+            // Numbers from API come as a string, so they are converted to number with parseFloat
+            let secSpans = document.querySelectorAll(".sec-span")
+            secSpans.forEach((span, index) => {
+            span.textContent = parseFloat(data.rates[secSpanNames[index]]).toFixed(5)
+            })
+
+        } else {
+            console.error('Failed to fetch data:', response.status, response.statusText);
+        }
+    } catch (error) {
+        console.error('An error occurred while fetching data:', error);
+    }
+}
+
+fetchCurrencyData(); // Call the function just once (everytime the page renders)

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
     crossorigin="anonymous" referrerpolicy="no-referrer"/> <!-- This is for icons in footer -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
 </head>
 
 <body>
@@ -51,7 +52,7 @@
 
     <header id = "header">
         <div id = "image-logo">
-            <a href="#header"><img src="img/name-logo.png" alt="Image Logo" id="logo"></a>
+            <a href="#scrollup"><img src="img/name-logo.png" alt="Image Logo" id="logo"></a>
         </div>
         <nav class = "sections">
             <a href="#Howitworks" class="button">How it works</a>
@@ -72,6 +73,22 @@
             <img src="img/candlestick.png" alt="Candlestick Logo" id="candle-logo">
             <p id = "paragraph-mp">We're looking for profitable traders to our funding program</p>
             <a id="join" href="#programs">Join us!</a>
+
+            <!-- API pair information -->
+            <div class="swiper-title">
+                <h2>FOREX pairs and current prices:</h2>
+            </div>
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                  <!-- Slides -->
+                </div>
+              
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
         </div><br><br>  
     
             <!-- This section contains the How it works information -->    
@@ -432,6 +449,7 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script> <!-- Icons for Sign Up section -->
     <script src="app.js"></script>
 
