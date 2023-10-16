@@ -239,3 +239,25 @@ async function fetchCurrencyData() {
 }
 
 fetchCurrencyData(); // Call the function just once (everytime the page renders)
+
+// To make the icon button appear only after scrolling certain level:
+
+let iconbutton = document.querySelector(".iconbutton")
+
+function showIconButton() {
+    // Get the current vertical scroll position of the page
+    const scrollY = window.scrollY
+
+    // Define a scroll position from which to show the element
+    const showPosition = 900; // Ammount of pixels
+
+    if (scrollY <= showPosition) {
+        // If the user has not scrolled far enough, hide the element
+        iconbutton.style.display = 'none';
+    } else {
+        iconbutton.style.display = "flex"
+    }
+}
+
+// Add an event listener for scroll detection
+window.addEventListener('scroll', showIconButton);

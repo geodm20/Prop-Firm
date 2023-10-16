@@ -694,7 +694,7 @@ input {
     height: 40px;
     border-radius: 100%;
     background-color: var(--regbuttoncolor);
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     position: fixed;
