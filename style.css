@@ -146,14 +146,15 @@ body { /* This removes the space in the sections if padding and margin are not z
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     width: 50%;
-    top: 55%;
+    top: 50vh;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: var(--headfoot);
     width: 360px;
     border-radius: 3rem;
+    z-index: 2;
 }
 
 /* THIS SECTION CONTAINS THE HEADER ELEMENTS ONLY */
@@ -164,7 +165,7 @@ body { /* This removes the space in the sections if padding and margin are not z
     display: flex;
     justify-content: space-around;
     width: 100%;
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 2;
 }
@@ -211,6 +212,7 @@ body { /* This removes the space in the sections if padding and margin are not z
 main {
     display: flex;
     flex-direction: column;
+    margin-top: 5rem;
 }
 
 /* MAIN DIVISION DIV */

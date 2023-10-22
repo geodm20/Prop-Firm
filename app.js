@@ -143,7 +143,7 @@ const swiper = new Swiper('.swiper', {
 // Create 6 divs with classes "swiper-slide" and appendChild to div "swiper-wrapper"
 
 let swiperWrapper = document.querySelector(".swiper-wrapper")
-for (let i = 0; i < 6; i++) {
+for (let i = 0; i < 7; i++) {
 let swiperSlide = document.createElement("div")
 swiperSlide.className = "swiper-slide"
 swiperWrapper.appendChild(swiperSlide)
@@ -227,7 +227,15 @@ async function fetchCurrencyData() {
             // Numbers from API come as a string, so they are converted to number with parseFloat
             let secSpans = document.querySelectorAll(".sec-span")
             secSpans.forEach((span, index) => {
-            span.textContent = parseFloat(data.rates[secSpanNames[index]]).toFixed(5)
+                    // "USD" goes first if it's the higher currency value, like in USDCAD, USDCHF and USDJPY
+                    // But it goes at the end if it's lower in value, like in EURUSD, GBPUSD, AUDUSD or NZDUSD.
+                    // The data is giving prices based in USD, so I must fix the pairs
+                    if (firstSpanNames[index].startsWith("USD")) {
+                        span.textContent = parseFloat(data.rates[secSpanNames[index]]).toFixed(5)
+                    }
+                    else {
+                        span.textContent = parseFloat(1 / data.rates[secSpanNames[index]]).toFixed(5)
+                } 
             })
 
         } else {
@@ -261,3 +269,8 @@ function showIconButton() {
 
 // Add an event listener for scroll detection
 window.addEventListener('scroll', showIconButton);
+
+// This is used to prevent the page to scroll up when "Sign Up" button is clicked:
+document.getElementById("signupbutton").addEventListener("click", function(event) {
+    event.preventDefault();
+});
